@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Listbox, Transition } from "@headlessui/react";
 import { CustomFilterProps } from "@/types";
 
-function CustomFilter({ title, options, setFilter }: CustomFilterProps) {
+function CustomFilter<T>({ title, options, setFilter }: CustomFilterProps<T>) {
 
   const [selected, setSelected] = useState(options[0]);
   
@@ -14,7 +14,7 @@ function CustomFilter({ title, options, setFilter }: CustomFilterProps) {
     <div className="w-fit" >
       <Listbox
         value={selected}
-        onChange={(e) => {setSelected(e); setFilter(e.value);}}
+        onChange={(e) => {setSelected(e); setFilter(e.value as unknown as T);}}
       >
         <div className="relative w-fit z-10" >
           <Listbox.Button className="custom-filter__btn" >

@@ -62,7 +62,7 @@ export default function Home() {
             <CustomFilter title="fuel" options={fuels} 
             setFilter={setFuel}/>
             <CustomFilter title="year" options={yearsOfProduction} 
-            setYear={setYear}/>
+            setFilter={setYear}/>
           </div>
         </div>
 

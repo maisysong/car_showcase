@@ -5,6 +5,7 @@ import React from 'react';
 
 import { SearchManufacturer } from ".";
 import Image from 'next/image';
+import { SearchBarProps } from '@/types';
 
 const SearchButton = ({ otherClasses }: {otherClasses: string}) => (
   <button type='submit' className={`-ml-3 z-10 ${otherClasses}`} >
@@ -18,7 +19,7 @@ const SearchButton = ({ otherClasses }: {otherClasses: string}) => (
   </button>
 )
 
-function SearchBar({setManufacturer, setModel}) {
+function SearchBar({setManufacturer, setModel} : SearchBarProps) {
 
     const [searchManufacturer, setSearchManufacturer] = useState('')
     const [searchModel, setSearchModel] = useState('')
